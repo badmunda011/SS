@@ -44,7 +44,7 @@ opencv-python-headless==4.9.0.80
 telethon==1.33.1
 telegraph==2.2.0
 unidecode
-yt-dlp
+yt-dlp==2023.12.30
 youtube-search
 youtube-search-python
 gtts
