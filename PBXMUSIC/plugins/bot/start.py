@@ -76,8 +76,6 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-            return await message.reply_photo(
-                photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -121,7 +119,6 @@ async def start_pm(client, message: Message, _):
             await m.delete()
             await app.send_photo(
                 chat_id=message.chat.id,
-                photo=thumbnail,
                 caption=searched_text,
                 reply_markup=key,
             )
@@ -132,8 +129,6 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_photo(
-            photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
@@ -172,8 +167,6 @@ async def start_gp(client, message: Message, _):
         
     out = start_panel(_)
     BOT_UP = await bot_up_time()
-    await message.reply_photo(
-        photo=config.START_IMG_URL,
         caption=_["start_1"].format(app.mention, BOT_UP),
         reply_markup=InlineKeyboardMarkup(out),
     )
