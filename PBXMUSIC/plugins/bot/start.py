@@ -169,6 +169,7 @@ async def start_gp(client, message: Message, _):
         
     out = start_panel(_)
     BOT_UP = await bot_up_time()
+    await message.reply(
         caption=_["start_1"].format(app.mention, BOT_UP),
         reply_markup=InlineKeyboardMarkup(out),
     )
